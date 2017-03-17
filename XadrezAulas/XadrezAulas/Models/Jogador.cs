@@ -12,10 +12,12 @@ namespace XadrezAulas.Models
         {
             Nome = nome;
             CorPeca = corPeca;
+            TurnoJogar = false;
         }
 
         public string Nome { get; set; }
         public CorPeca CorPeca { get; set; }
+        public bool TurnoJogar { get; set; }
         //public List<Jogadas> Criar modelo de jogadas
     }
 }

@@ -35,10 +35,21 @@ namespace XadrezAulas.Views
                         if (_tabuleiroController.JogadoresInscritos() == 2)
                         {
                             _estadoJogo = EstadoJogo.Jogar;
+                            _tabuleiroController.GetListaJogadores().FirstOrDefault().TurnoJogar = true;
                         }
                         break;
                     case EstadoJogo.Jogar:
-
+                        Console.WriteLine("É a vez do jogador {0} jogar\n", 
+                            _tabuleiroController.GetListaJogadores().FirstOrDefault(j => j.TurnoJogar = true).Nome);
+                        Console.Write("Indique a linha onde quer jogar (a - h) ");
+                        ConsoleKeyInfo consoleKeyInfoLine = Console.ReadKey();
+                        // todo: validar linha
+                        Console.Write("Indique a coluna onde quer jogar (0 - 7) ");
+                        ConsoleKeyInfo consoleKeyInfoColumn = Console.ReadKey();
+                        // todo: validar coluna
+                        // todo: validar possíveis posições das peças
+                        // todo: validar possíveis movimentos dos jogadores
+                        _tabuleiroController.TrocarTurno();
                         break;
                     case EstadoJogo.FimJogo:
                         break;

@@ -16,7 +16,7 @@ namespace XadrezAulas
             teste = Char.ToLower(teste);
             /*>= 97  <= 104*/
             /* 0 a 7 */
-            Console.WriteLine((int)teste);
+            //Console.WriteLine((int)teste);
             Console.ReadKey();
             Jogo jogo = new Jogo();
             jogo.InicializarJogo();

@@ -8,7 +8,7 @@ namespace XadrezAulas.Models
 {
     public enum TipoPeca
     {
-        Peao,
+        Peao = 100,
         Torre,
         Cavalo,
         Bispo,

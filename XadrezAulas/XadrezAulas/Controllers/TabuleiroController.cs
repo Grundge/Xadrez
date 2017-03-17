@@ -26,9 +26,21 @@ namespace XadrezAulas.Controllers
             return _tabuleiro.JogadorList.Count();
         }
 
+        public List<Jogador> GetListaJogadores()
+        {
+            return _tabuleiro.JogadorList;
+        }
+
         public void TrocarTurno()
         {
-            
+            // todo: Trocar os turnos dos jogadores
+            int posicao = _tabuleiro.JogadorList.IndexOf(_tabuleiro.JogadorList.FirstOrDefault(j => j.TurnoJogar == true));
+            _tabuleiro.JogadorList.FirstOrDefault(j => j.TurnoJogar == false).TurnoJogar = true;
+            _tabuleiro.JogadorList[posicao].TurnoJogar = false;
+            foreach (Jogador jogador in _tabuleiro.JogadorList)
+            {
+                Console.WriteLine(jogador.TurnoJogar);
+            }
         }
     }
 }
